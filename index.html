@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Learn and Scribble makes fun printable learning resources and digital downloads. Coloring books for kids, study bundles coming soon.">
+    <link rel="icon" href="data:,">
+    <title>Learn and Scribble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --green: rgb(20, 83, 45);
+        --green-bright: #1d7a41;
+        --btn-bg: rgb(20, 83, 45);
+        --ink: rgb(27, 58, 92);
+        --sky: rgb(201, 233, 247);
+        --sky-soft: #e8f6fc;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --muted: #41607f;
+        --line: #cfe3ee;
+        --badge-soon-bg: #dceefb;
+        --badge-soon-ink: rgb(27, 58, 92);
+        --shadow: 0 10px 30px rgba(27, 58, 92, 0.12);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --green: #8fd3a4;
+          --green-bright: #35a35c;
+          --btn-bg: #1d7a41;
+          --ink: #dcecf7;
+          --sky: #173a56;
+          --sky-soft: #122e45;
+          --bg: #0c1e2e;
+          --surface: #12293e;
+          --muted: #a8c3d8;
+          --line: #24455f;
+          --badge-soon-bg: #1d425f;
+          --badge-soon-ink: #cfe7f7;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+          color-scheme: dark;
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+      body {
+        margin: 0;
+        font-family: "Nunito", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        font-size: 17px;
+      }
+      h1, h2, h3 {
+        font-family: "Baloo 2", "Nunito", system-ui, sans-serif;
+        color: var(--green);
+        line-height: 1.15;
+        margin: 0;
+      }
+      a { color: var(--green-bright); }
+      img { max-width: 100%; height: auto; display: block; }
+
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+      /* Skip link: off screen until it receives keyboard focus */
+      .skip-link {
+        position: absolute; top: -100px; left: 16px; z-index: 100;
+        background: var(--btn-bg); color: #ffffff;
+        font-weight: 800; text-decoration: none;
+        padding: 12px 20px; border-radius: 0 0 12px 12px;
+      }
+      .skip-link:focus-visible { top: 0; }
+      main[tabindex="-1"]:focus { outline: none; }
+      section[id] { scroll-margin-top: 88px; }
+      .grid > *, .hero-inner > *, .about-inner > * { min-width: 0; }
+
+      /* Header */
+      header {
+        position: sticky; top: 0; z-index: 10;
+        background: var(--bg);
+        border-bottom: 2px solid var(--line);
+      }
+      .header-inner {
+        display: flex; align-items: center; gap: 12px;
+        padding-top: 10px; padding-bottom: 10px;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .brand img { width: 44px; height: 44px; border-radius: 12px; }
+      .brand span {
+        font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.35rem;
+        color: var(--green);
+      }
+      nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+      nav a {
+        text-decoration: none; font-weight: 700; color: var(--ink);
+        padding: 10px 14px; border-radius: 999px; font-size: 0.98rem;
+      }
+      nav a:hover, nav a:focus-visible { background: var(--sky-soft); }
+
+      /* Hero */
+      .hero {
+        background: var(--sky-soft);
+        border-bottom: 3px dashed var(--line);
+      }
+      .hero-inner {
+        display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px;
+        align-items: center; padding-top: 48px; padding-bottom: 56px;
+      }
+      .hero h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); margin-bottom: 14px; }
+      .hero p { font-size: 1.15rem; margin: 0 0 24px; max-width: 34em; }
+      .hero-art img {
+        border-radius: 28px; box-shadow: var(--shadow);
+        width: 100%; max-width: 360px; margin: 0 auto;
+      }
+      .btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--btn-bg); color: #ffffff;
+        font-weight: 800; text-decoration: none;
+        padding: 13px 24px; border-radius: 999px; font-size: 1.02rem;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .btn { transition: none; }
+        .btn:hover, .btn:focus-visible { transform: none; }
+      }
+      .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+      .btn.secondary {
+        background: transparent; color: var(--green);
+        border: 2px solid var(--green);
+      }
+      @media (prefers-color-scheme: dark) {
+        .btn.secondary { color: var(--green); border-color: var(--green); }
+      }
+      .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+      /* Sections */
+      section { padding: 56px 0 8px; }
+      .section-head { max-width: 42em; margin-bottom: 28px; }
+      .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); margin-bottom: 8px; }
+      .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+      .grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+      }
+      .card {
+        background: var(--surface);
+        border: 2px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex; flex-direction: column;
+      }
+      .card img.cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+      .card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+      .badge {
+        align-self: flex-start;
+        font-size: 0.8rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+        padding: 4px 12px; border-radius: 999px;
+      }
+      .badge.now { background: var(--btn-bg); color: #ffffff; }
+      .badge.soon { background: var(--badge-soon-bg); color: var(--badge-soon-ink); }
+      .card h3 { font-size: 1.45rem; }
+      .card p { margin: 0; }
+      .meta { color: var(--muted); font-size: 0.95rem; font-weight: 600; }
+      .buy-row {
+        margin-top: auto; padding-top: 8px;
+        display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      }
+      .price { font-family: "Baloo 2", sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--green); }
+      .format-note { color: var(--muted); font-size: 0.92rem; }
+
+      .soon-panel {
+        background: var(--sky-soft);
+        display: flex; align-items: center; justify-content: center;
+        aspect-ratio: 16 / 8; min-height: 170px;
+      }
+      .soon-panel .glyph {
+        font-family: "Baloo 2", sans-serif; font-weight: 800;
+        font-size: clamp(3rem, 8vw, 4.5rem); color: var(--green);
+        opacity: 0.85;
+      }
+      .soon-panel svg {
+        width: 84px; height: 84px; color: var(--green); opacity: 0.85;
+      }
+
+      /* Wall art grid: three across on wide screens */
+      .grid.wall { grid-template-columns: repeat(3, 1fr); }
+      @media (max-width: 1020px) {
+        .grid.wall { grid-template-columns: 1fr 1fr; }
+      }
+
+      /* More coming banner */
+      .banner {
+        margin: 56px 0 0;
+        background: var(--sky);
+        border-radius: 24px;
+        padding: 30px 32px;
+        display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+      }
+      @media (prefers-color-scheme: dark) {
+        .banner { background: var(--sky-soft); }
+      }
+      .banner h2 { font-size: 1.6rem; }
+      .banner p { margin: 6px 0 0; max-width: 38em; }
+      .banner .btn { margin-left: auto; }
+
+      /* About */
+      .about-inner {
+        display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center;
+        padding-bottom: 16px;
+      }
+      .about-inner img { border-radius: 24px; box-shadow: var(--shadow); }
+      .about-inner p { font-size: 1.08rem; margin: 0 0 12px; }
+      .about-inner p:last-child { margin-bottom: 0; }
+
+      /* Follow */
+      .follow { padding-bottom: 64px; }
+      .follow-links { display: flex; gap: 14px; flex-wrap: wrap; }
+      .follow-links a {
+        display: inline-flex; align-items: center; gap: 10px;
+        border: 2px solid var(--line); border-radius: 999px;
+        padding: 11px 20px; font-weight: 800; text-decoration: none; color: var(--ink);
+        background: var(--surface);
+      }
+      .follow-links a:hover, .follow-links a:focus-visible { border-color: var(--green); }
+      .follow-links svg { width: 20px; height: 20px; flex: none; }
+
+      footer {
+        border-top: 2px solid var(--line);
+        padding: 24px 0 32px;
+        color: var(--muted); font-size: 0.95rem;
+      }
+      .footer-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+      .footer-inner .links { margin-left: auto; display: flex; gap: 18px; flex-wrap: wrap; }
+      .footer-inner a { color: var(--muted); font-weight: 700; }
+
+      :focus-visible { outline: 3px solid var(--green-bright); outline-offset: 2px; }
+
+      /* Tablet */
+      @media (max-width: 900px) {
+        .hero-inner { gap: 24px; padding-top: 40px; padding-bottom: 48px; }
+        .hero-art img { max-width: 300px; }
+        section { padding-top: 44px; }
+        .banner { padding: 26px 24px; }
+      }
+
+      /* Mobile */
+      @media (max-width: 760px) {
+        .header-inner { flex-wrap: wrap; }
+        nav { margin-left: 0; }
+        .hero-inner { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 44px; }
+        .grid.wall { grid-template-columns: 1fr; }
+        .hero-art { order: -1; }
+        .hero-art img { max-width: 220px; }
+        .grid { grid-template-columns: 1fr; }
+        .about-inner { grid-template-columns: 1fr; }
+        .about-inner img { max-width: 160px; }
+        .banner .btn { margin-left: 0; }
+        .banner { padding: 24px 20px; }
+        .brand span { font-size: 1.15rem; }
+        nav a { padding: 10px 10px; }
+        .footer-inner .links { margin-left: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+      <div class="wrap header-inner">
+        <a class="brand" href="#main-content" aria-label="Learn and Scribble, home">
+          <img src="images/logo.png" alt="" width="44" height="44">
+          <span>Learn and Scribble</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#coloring-books">Coloring Books</a>
+          <a href="#wall-art">Wall Art</a>
+          <a href="#coming-soon">Coming Soon</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="wrap hero-inner">
+          <div>
+            <h1 id="hero-heading">Printables for learners of every age</h1>
+            <p>Coloring books for young kids, study guides for college students, and cozy art for your walls, all thoughtfully made and ready to print at home.</p>
+            <div class="hero-actions">
+              <a class="btn" href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Visit the Learn and Scribble shop on Payhip (opens in a new tab)">Visit the shop</a>
+              <a class="btn secondary" href="#coloring-books">Browse the books</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img src="images/logo.png" alt="The Learn and Scribble logo, a green and navy pencil drawing a curved line that flows into an open book" width="360" height="360">
+          </div>
+        </div>
+      </section>
+
+      <section id="coloring-books" aria-labelledby="coloring-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="coloring-heading">Coloring books, available now</h2>
+            <p>Bold and easy pages with big, friendly outlines, made for little hands. Buy once, download instantly, and print at home as many times as you like.</p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <img class="cover" src="images/animals-cover.png" width="800" height="800" alt="Cover of the Cute Animals Coloring Book for Kids by Learn and Scribble. Light blue background with the title in dark green and four sample black and white animal coloring pages, a fox, a bunny, a kitten, and a panda, arranged in a grid.">
+              <div class="card-body">
+                <span class="badge now">Available now</span>
+                <h3>Cute Animals Coloring Book for Kids</h3>
+                <p>25 bold and easy coloring pages featuring adorable baby animals. Fox, bunny, puppy, kitten, panda, elephant, lion, and more. Perfect for rainy days, classrooms, road trips, and quiet time.</p>
+                <p class="meta">Ages 4 to 8 &middot; 25 pages &middot; Printable PDF</p>
+                <div class="buy-row">
+                  <span class="price">$2.99</span>
+                  <a class="btn" href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Buy the Cute Animals Coloring Book for Kids on Payhip (opens in a new tab)">Buy on Payhip</a>
+                </div>
+                <p class="format-note">Instant download. A paperback edition is on its way to Amazon.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="cover" src="images/christmas-cover.png" width="800" height="800" alt="Cover of the Christmas Coloring Book for Kids by Learn and Scribble. Festive light blue background with the title in dark green and four sample black and white Christmas coloring pages, a Christmas tree, a snowman, a Santa hat, and a reindeer, arranged in a grid.">
+              <div class="card-body">
+                <span class="badge now">Available now</span>
+                <h3>Christmas Coloring Book for Kids</h3>
+                <p>25 bold and easy holiday coloring pages. Santa, reindeer, snowmen, gingerbread friends, Christmas trees, elves, snowflakes, and more. Perfect for holiday parties, classroom activities, stocking stuffers, and cozy winter afternoons.</p>
+                <p class="meta">Ages 4 to 8 &middot; 25 pages &middot; Printable PDF</p>
+                <div class="buy-row">
+                  <span class="price">$2.99</span>
+                  <a class="btn" href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Buy the Christmas Coloring Book for Kids on Payhip (opens in a new tab)">Buy on Payhip</a>
+                </div>
+                <p class="format-note">Instant download. A paperback edition is on its way to Amazon.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="banner">
+            <div>
+              <h2>More products coming</h2>
+              <p>New coloring books and printable learning resources are in the works right now. Follow along on Instagram and Pinterest to see new titles as they arrive.</p>
+            </div>
+            <a class="btn" href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="See what is new in the Learn and Scribble shop on Payhip (opens in a new tab)">See what is new in the shop</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="wall-art" aria-labelledby="wall-art-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="wall-art-heading">Wall art printables, coming soon</h2>
+            <p>A new line of cozy Christmas and winter wall art is on the way. Download a design, print it at home or at a local print shop, and frame it for an instant seasonal refresh. These will open in our Etsy shop first.</p>
+          </div>
+          <div class="grid wall">
+            <article class="card">
+              <div class="soon-panel" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4 L36 20 H30 L40 32 H8 L18 20 H12 Z"/><path d="M24 32 V42"/><path d="M18 42 H30"/></svg>
+              </div>
+              <div class="card-body">
+                <span class="badge soon">Coming soon</span>
+                <h3>Christmas Tree Farm Print</h3>
+                <p>A simple evergreen with a dusting of snow, in the soft greens and warm reds of a country Christmas. An easy fit for entryways, mantels, and gallery walls.</p>
+                <p class="meta">Printable wall art &middot; Multiple sizes</p>
+                <p class="format-note">Coming soon on Etsy.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="soon-panel" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24 L24 9 L42 24"/><path d="M12 21 V39 H36 V21"/><path d="M33 14 V9 H38 V18"/><path d="M20 39 V29 H28 V39"/><path d="M10 6 H10.5 M20 4 H20.5 M38 5 H38.5" stroke-width="3"/></svg>
+              </div>
+              <div class="card-body">
+                <span class="badge soon">Coming soon</span>
+                <h3>Cozy Winter Cabin Print</h3>
+                <p>A quiet cabin tucked into the pines, with a warm window glow and snow on the roof. Made for reading corners, guest rooms, and anyone who loves a slow winter evening.</p>
+                <p class="meta">Printable wall art &middot; Multiple sizes</p>
+                <p class="format-note">Coming soon on Etsy.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="soon-panel" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 V43"/><path d="M7.5 14.5 L40.5 33.5"/><path d="M40.5 14.5 L7.5 33.5"/><path d="M24 5 L19 10 M24 5 L29 10 M24 43 L19 38 M24 43 L29 38"/><path d="M7.5 14.5 L13 15 M7.5 14.5 L8.5 20 M40.5 33.5 L35 33 M40.5 33.5 L39.5 28"/><path d="M40.5 14.5 L35 15 M40.5 14.5 L39.5 20 M7.5 33.5 L13 33 M7.5 33.5 L8.5 28"/></svg>
+              </div>
+              <div class="card-body">
+                <span class="badge soon">Coming soon</span>
+                <h3>Let It Snow Print</h3>
+                <p>One bold snowflake on a soft winter background, simple enough to pair with the other prints in the collection or to stand on its own all season long.</p>
+                <p class="meta">Printable wall art &middot; Multiple sizes</p>
+                <p class="format-note">Coming soon on Etsy.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="coming-soon" aria-labelledby="soon-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="soon-heading">Study bundles, coming soon</h2>
+            <p>Learn and Scribble is growing up, too. Two study bundles for older learners are in production now. They are not on sale yet, and this is a first look at what is on the way.</p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="soon-panel" aria-hidden="true"><span class="glyph">&Sigma;</span></div>
+              <div class="card-body">
+                <span class="badge soon">Coming soon</span>
+                <h3>Discrete Math Exam-Prep Bundle</h3>
+                <p>A focused exam-prep bundle for discrete mathematics, built to turn review time into ready-for-the-test confidence. Worked examples, practice problems, and quick reference sheets, all in one place.</p>
+                <p class="meta">Study bundle &middot; In production</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="soon-panel" aria-hidden="true"><span class="glyph">&lt;/&gt;</span></div>
+              <div class="card-body">
+                <span class="badge soon">Coming soon</span>
+                <h3>The Web Project Playbook</h3>
+                <p>From project statement to published site. A step by step playbook that walks a web project from the first idea through planning, building, and publishing a finished site.</p>
+                <p class="meta">Study bundle &middot; In production</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="about-heading">About Learn and Scribble</h2>
+          </div>
+          <div class="about-inner">
+            <img src="images/logo.png" alt="The Learn and Scribble logo, a green and navy pencil drawing a curved line that flows into an open book" width="200" height="200" loading="lazy">
+            <div>
+              <p>Welcome to Learn and Scribble! We make fun printable learning resources and digital downloads. Every design is created to spark creativity and make learning feel easy.</p>
+              <p>New titles added regularly. Thanks for stopping by!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="follow" aria-labelledby="follow-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="follow-heading">Shop and follow along</h2>
+            <p>Everything for sale lives in the Payhip shop. Follow along for new coloring pages, fresh titles, and a peek at what is coming next.</p>
+          </div>
+          <div class="follow-links">
+            <a href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Learn and Scribble shop on Payhip (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 3H2"/><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/></svg>
+              Payhip shop
+            </a>
+            <a href="https://instagram.com/learnandscribble.shop" target="_blank" rel="noopener" aria-label="Learn and Scribble on Instagram (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.pinterest.com/learnandscribble/" target="_blank" rel="noopener" aria-label="Learn and Scribble on Pinterest (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.2c-2.5 0-4.2 1.8-4.2 3.9 0 1.2.5 2.2 1.4 2.6.2.1.3 0 .3-.1l.2-.9c0-.2 0-.2-.1-.4-.4-.5-.6-1-.6-1.7 0-1.7 1.3-3.1 3.2-3.1 1.7 0 3 .9 3 2.4 0 1.8-.8 3.4-2 3.4-.7 0-1.2-.5-1-1.2.2-.8.6-1.6.6-2.2 0-.5-.3-.9-.8-.9-.7 0-1.2.7-1.2 1.6 0 .6.2 1 .2 1l-.9 3.7c-.2 1-.1 2.2 0 2.3"/></svg>
+              Pinterest
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <span>&copy; <span id="year">2026</span> Learn and Scribble. All rights reserved.</span>
+        <nav class="links" aria-label="Footer">
+          <a href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Learn and Scribble shop on Payhip (opens in a new tab)">Payhip shop</a>
+          <a href="https://instagram.com/learnandscribble.shop" target="_blank" rel="noopener" aria-label="Learn and Scribble on Instagram (opens in a new tab)">Instagram</a>
+          <a href="https://www.pinterest.com/learnandscribble/" target="_blank" rel="noopener" aria-label="Learn and Scribble on Pinterest (opens in a new tab)">Pinterest</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
