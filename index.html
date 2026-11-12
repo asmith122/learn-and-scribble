@@ -143,7 +143,7 @@
 
       /* Sections */
       section { padding: 56px 0 8px; }
-      .section-head { max-width: 42em; margin-bottom: 28px; }
+      .section-head { margin-bottom: 28px; }
       .section-head h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); margin-bottom: 8px; }
       .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
 
@@ -594,7 +594,7 @@
 
           <div class="co-subhead">
             <h3 id="co-gallery-heading">Pick a picture</h3>
-            <p>10 pages from the book to color here. Pages tagged &ldquo;Print + save&rdquo; are the 3 samples you can also print or save. The other 7 are screen only. The full book has all 25 pages to print at home.</p>
+            <p>10 pages from the book to color here. Pages tagged &ldquo;Print + Save&rdquo; are the 3 samples you can also print or save. The other 7 are screen only. The full book has all 25 pages to print at home.</p>
           </div>
           <div class="co-gallery" id="coGallery" role="listbox" aria-labelledby="co-gallery-heading"></div>
 
@@ -640,7 +640,7 @@
           <div class="co-grownups">
             <div>
               <h3>For grown-ups</h3>
-              <p>Every picture here is a real page from <strong>Cute Animals Coloring Book for Kids</strong> (ages 4 to 8) by Learn and Scribble. The 3 pages tagged &ldquo;Print + save&rdquo; are free samples you can print or save. The other 7 are screen-only previews. The printable PDF has all 25 pages, so you can print the whole set at home for the fridge-door masterpieces. Coloring happens right in your browser, nothing is uploaded.</p>
+              <p>Every picture here is a real page from <strong>Cute Animals Coloring Book for Kids</strong> (ages 4 to 8) by Learn and Scribble. Coloring happens right in your browser, nothing is uploaded. The 3 pages tagged &ldquo;Print + Save&rdquo; are free samples you can print or save. The other 7 are screen-only previews. The printable PDF has all 25 pages, so you can print the whole set at home for the fridge-door masterpieces.</p>
             </div>
             <a class="btn" href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Get the full Cute Animals Coloring Book on Payhip for $2.99 (opens in a new tab)">Get the full book, $2.99</a>
           </div>
@@ -651,7 +651,7 @@
         <div class="wrap">
           <div class="section-head">
             <h2 id="wall-art-heading">Wall art printables, coming soon</h2>
-            <p>A new line of cozy Christmas and winter wall art is on the way. Download a design, print it at home or at a local print shop, and frame it for an instant seasonal refresh. These will open in our Etsy shop first.</p>
+            <p>A new line of cozy Christmas and winter wall art is on the way. Download a design, print it at home or at a local print shop, and frame it for an instant seasonal refresh.</p>
           </div>
           <div class="grid wall">
             <article class="card">
@@ -663,7 +663,7 @@
                 <h3>Christmas Tree Farm Print</h3>
                 <p>A simple evergreen with a dusting of snow, in the soft greens and warm reds of a country Christmas. An easy fit for entryways, mantels, and gallery walls.</p>
                 <p class="meta">Printable wall art &middot; Multiple sizes</p>
-                <p class="format-note">Coming soon on Etsy.</p>
+                <p class="format-note">Coming soon.</p>
               </div>
             </article>
 
@@ -676,7 +676,7 @@
                 <h3>Cozy Winter Cabin Print</h3>
                 <p>A quiet cabin tucked into the pines, with a warm window glow and snow on the roof. Made for reading corners, guest rooms, and anyone who loves a slow winter evening.</p>
                 <p class="meta">Printable wall art &middot; Multiple sizes</p>
-                <p class="format-note">Coming soon on Etsy.</p>
+                <p class="format-note">Coming soon.</p>
               </div>
             </article>
 
@@ -689,7 +689,7 @@
                 <h3>Let It Snow Print</h3>
                 <p>One bold snowflake on a soft winter background, simple enough to pair with the other prints in the collection or to stand on its own all season long.</p>
                 <p class="meta">Printable wall art &middot; Multiple sizes</p>
-                <p class="format-note">Coming soon on Etsy.</p>
+                <p class="format-note">Coming soon.</p>
               </div>
             </article>
           </div>
@@ -745,7 +745,7 @@
         <div class="wrap">
           <div class="section-head">
             <h2 id="follow-heading">Shop and follow along</h2>
-            <p>Everything for sale lives in the Payhip shop. Follow along for new coloring pages, fresh titles, and a peek at what is coming next.</p>
+            <p>All of our printables for sale live in the Payhip shop. Paperback editions of our coloring books are also available on Amazon. Follow along for new coloring pages, fresh titles, and a peek at what is coming next.</p>
           </div>
           <div class="follow-links">
             <a href="https://payhip.com/LearnandScribble" target="_blank" rel="noopener" aria-label="Learn and Scribble shop on Payhip (opens in a new tab)">
@@ -1009,7 +1009,7 @@
           nm.className = "co-name"; nm.textContent = page.name;
           var kindTag = document.createElement("span");
           kindTag.className = "co-tag " + (page.printable ? "co-tag-print" : "co-tag-screen");
-          kindTag.textContent = page.printable ? "Print + save" : "Screen only";
+          kindTag.textContent = page.printable ? "Print + Save" : "Screen only";
           btn.appendChild(tag); btn.appendChild(im); btn.appendChild(nm); btn.appendChild(kindTag);
           btn.addEventListener("click", function () {
             if (currentPage && currentPage.slug === page.slug) return;
