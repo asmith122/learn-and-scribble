@@ -160,6 +160,8 @@
       }
       .card img.cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
       .card img.wallpaper { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+      .card .montage { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+      .card .montage img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
       .card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
       .badge {
         align-self: flex-start;
@@ -451,6 +453,7 @@
           <a href="#coloring-books">Coloring Books</a>
           <a href="#color-online">Color Online</a>
           <a href="#wall-art">Wall Art</a>
+          <a href="#printed-products">Printed Products</a>
           <a href="#wallpaper-calendars">Wallpapers</a>
           <a href="#coming-soon">Study Bundles</a>
           <a href="#about">About</a>
@@ -697,6 +700,35 @@
         </div>
       </section>
 
+      <section id="printed-products" aria-labelledby="printed-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="printed-heading">Printed products</h2>
+            <p>Our autumn and winter art, printed on mugs, t-shirts, candles, posters, and stickers. Made to order and shipped to you from our Printify shop.</p>
+          </div>
+          <div class="grid wall">
+            <article class="card">
+              <div class="montage">
+                <img src="images/printify-christmas-tree.jpg" width="800" height="533" alt="Christmas tree with glowing ornaments in falling snow, a painterly holiday scene by Learn and Scribble.">
+                <img src="images/printify-snowy-village.jpg" width="800" height="533" alt="Snowy village street at dusk with warm glowing windows, a painterly holiday scene by Learn and Scribble.">
+                <img src="images/printify-reindeer.jpg" width="800" height="533" alt="Reindeer standing in a snowy pine forest at dawn, a painterly holiday scene by Learn and Scribble.">
+                <img src="images/printify-gingerbread-house.jpg" width="800" height="533" alt="Gingerbread house with candy details in a snowy garden, a painterly holiday scene by Learn and Scribble.">
+              </div>
+              <div class="card-body">
+                <span class="badge now">Available now</span>
+                <h3>Mugs, T-Shirts, Candles, and More</h3>
+                <p>Four new holiday designs, joining the autumn and winter art from the wall art set, printed on mugs, t-shirts, scented soy candles, posters, and kiss-cut stickers.</p>
+                <p class="meta">Made to order &middot; Shipped to you</p>
+                <div class="buy-row">
+                  <a class="btn" href="https://learn-and-scribble.printify.me" target="_blank" rel="noopener" aria-label="Shop printed products in the Learn and Scribble store on Printify (opens in a new tab)">Shop the Printify store</a>
+                </div>
+                <p class="format-note">Prices vary by product. New designs added regularly.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="wallpaper-calendars" aria-labelledby="wallpaper-heading">
         <div class="wrap">
           <div class="section-head">
@@ -777,6 +809,8 @@
             <img src="images/logo.png" alt="The Learn and Scribble logo, a green and navy pencil drawing a curved line that flows into an open book" width="200" height="200" onerror="this.onerror=null;this.src='images/logo.png'">
             <div>
               <p>Welcome to Learn and Scribble! We make fun printable learning resources and digital downloads. Every design is created to spark creativity and make learning feel easy.</p>
+              <p>Our artwork is also printed on mugs, t-shirts, and posters, made to order and shipped to you.</p>
+              <p><a class="btn" href="https://learn-and-scribble.printify.me" target="_blank" rel="noopener" aria-label="Shop printed products in the Learn and Scribble store on Printify (opens in a new tab)">Shop printed products</a></p>
               <p>New titles added regularly. Thanks for stopping by!</p>
             </div>
           </div>
